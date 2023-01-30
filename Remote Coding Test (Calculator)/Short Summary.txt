@@ -1,0 +1,23 @@
+Remote Coding Test (Calculator)(1 man day)
+
+Summary:
+The calculator application is able to provide the correct answer for all the questions stated. 
+A screenshot will be attach along to display all the correct answers.
+The solution for the calculator application is using Stack class to store all the numbers and operators then perform the calculation.
+The application is able to return errors when invalid input or blank and also able to execute when correct input.
+
+Steps:
+1. Create validations to ensure the correct input. Only allow .0123456789+-*/()
+2. Create 1 string and 2 Stack classes.
+3. Looping all the characters from the questions. (10.1-(2+3*(7-5))
+3. When numbers, store into the string. When operators or open bracket, store into a operator Stack. When close bracket, take the numbers and operators then assign into the string.
+4. Example: (10-(2+3*(7-5)), the string will be 10.1;2;3;7;5;-*+-
+5. Create another looping for the string 10.1;2;3;7;5;-*+-.
+6. When hit semicolon(;), store the numbers before semicolon to a number Stack which created earlier.
+	When hit operator, retrieve out and remove the top number from the number stack as num2 and retrieve and remove the top number from the number stack as num1.
+	Then do the calculation and store back the result into the number stack.
+7. Example: 10.1;2;3;7;5;-*+- When hit minus operator, take 5 as num2 and take 7 as num1, 7-5=2
+8. After store the result, the number stack has the remaining 4 numbers: 10.1,2,3,2
+9. Subsequently, when hit *, will be 3*2=6 and store back. number Stack: 10.1,2,6
+10. Next operator, when hit +, will be 2+6=8 and store back. number Stack: 10.1,8
+11. Lastly, when hit -, will be 10.1-8=2.1 The final result will display on the console screen.
